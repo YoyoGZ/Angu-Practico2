@@ -1,0 +1,35 @@
+<h1> {{ title }}</h1>
+<br/>
+{{ mrControl }}
+
+<br/>
+<ul>
+  <li class="lista" *ngFor="let alumno of alumnos" >
+    <div [ngClass]="{
+      'green': mrControl === 9,
+      'orangered': mrControl >= 12 }">
+       {{ alumno | uppercase }}</div> 
+    
+  </li>
+</ul>
+
+<br/>
+
+<h2> Ng Style
+  <div [ngStyle]="{'font-size': MyStyle}">
+    Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+  </div> 
+</h2>
+
+<br/>
+
+<h2> NgIf 
+  <p style="margin-left: 25px"*ngIf="EsNgIf , else ElseTemplate"> Texto de prueba </p>
+    <ng-template #ElseTemplate>
+      <p > Texto else de NgIf</p>
+    </ng-template>
+</h2>
+
+<h2> Pipes
+ <p style="margin-left: 25px"> Fecha actual: {{ IsTheDate | date: 'dd/MM/YYYY' }} </p>  
+</h2>
